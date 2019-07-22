@@ -3,17 +3,17 @@ branches:
   only:
   - master
 node_js:
-- '7'
+  - "7"
 rust:
-- stable
+  - stable
 python:
-- '3.5'
+  - "3.5"
 before_install:
-- npm install
+  - npm install
 install:
-- pip install ghp-import
+  - pip install --user ghp-import
 script:
-- make github
+  - make github
 env:
   global:
   - secure: mdqrJXQrVqH8uJhnaeYnydoZGUERsFd0nrBe/XSC3M6sMhKz/SF0722AS+VRwhuMARwJA1F6hvIJJCLIZrsiWDaKYzQxRza0YdKt/3fT52uLbBXyFHaqsj0cOX1h7hWHstlh4AWc3uYFRvv097y8iJJnwSjTUo1DVs9Orw2jhO0NVXtKgVOAESrGNyX0p2J6+YGylYaIMCqemOoME1fy9bpixHIDJcKHAZlni/yV4sDt2fBzSEVQlCpikfA+1KDkNK/6I/rr+dqXUOKOqiGXQ1WrV5oaxzFqc8Ie19vtnE1IL755Xb3nIHDj6fFCAJInrno071IcKWUouGgsWmDgcpUSahFytDYPZ8QtEFlW3Ervki1Ow2QDlJJAKjY0wVb01ktwULNI/Fo7Mmb6czEaC+X6D9D38JUJevn+wdT/3bx+Zt/YwAJCnhbY8elftft9wOOWl3jLqEhblOyFP4WRlpnP1br5R5jDb9WrZhgOCJfVwETUg+7uC3V5qyQh2yZ0io5ZopMVkE8usGFbO+aeMRKAT2UbzxqHXLy/10GYO2nYmfDfsFCi41QfmCsZAYtmPzpwtiGli9e9sWWoBDVQF65xEsFWETWQjokbJ9UNDf2iZxlFa1BaQb2v/BGmEPPgApXmaB7lUl5aeSMg2VeCLJWQ5orT4Uiu6ok0hvY7Ph0=
