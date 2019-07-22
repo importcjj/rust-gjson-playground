@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "7"
+rust:
+  - stable
+python:
+  - "2.7"
+
+before_install:
+  - npm install
+
+install:
+  - pip install ghp-import
