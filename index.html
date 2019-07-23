@@ -142,7 +142,16 @@ friends.#(last=="Murphy").first   &gt;&gt; "Dale"
 friends.#(last=="Murphy")#.first  &gt;&gt; ["Dale","Jane"]
 friends.#(age&gt;45)#.last           &gt;&gt; ["Craig","Murphy"]
 friends.#(first%"D*").last        &gt;&gt; "Murphy"
+friends.#(nets.#(=="fb"))#.first  &gt;&gt; ["Dale","Roger"]
 </pre>
+
+        <p>
+            Use the selectors syntax to join multiple paths into a new JSON document.
+        </p>
+
+        <pre class="example">
+{name.first,age,"murphys":friends.#(last="Murphy")#.first}
+[name.first,age,children.0]</pre>
 
         <p class="tip">Powered by <a
                 href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">webassembly</a></p>
