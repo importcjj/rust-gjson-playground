@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Rut A-JSON playground</title>
+    <style type="text/css" media="screen">
+        body {
+            margin: 0;
+            font-size: 17px;
+            background: rgb(246, 221, 208);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        #title {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        #title .g {
+            color: #dea584;
+            padding-left: 5px;
+        }
+
+        #title .json {
+            padding-right: 5px;
+        }
+
+        .star-btn {
+            text-align: center
+        }
+
+        #title span {
+            background: #000;
+            color: #fff;
+        }
+
+        .component {
+            position: relative;
+            display: block;
+            background: #272822;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: Hack, monospace;
+            font-size: 15px;
+            border: 0;
+            border-radius: 6px;
+            outline: none;
+            box-sizing: border-box;
+            resize: none;
+            min-height: 58px;
+            box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.3);
+            overflow-x: auto;
+        }
+
+        .wrapper {
+            position: relative;
+            max-width: 1000px;
+            height: auto;
+            margin: auto;
+        }
+
+        .editor-wrapper {
+            min-height: 250px;
+        }
+
+        .value-wrapper {
+            min-height: 50px;
+            font-size: 15px;
+        }
+
+        #editor,
+        #json-value {
+            font-size: 15px;
+            max-height: 800px;
+        }
+
+        #editor {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.10);
+            /* color: rgba(255,255,255,0.75); */
+            padding: 20px;
+            border-radius: 6px;
+            font-family: Hack, monospace;
+            font-size: 15px;
+        }
+
+        .tip {
+            margin-top: 50px;
+            text-align: center;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1 id="title"><span class="g">A</span><span class="json">JSON</span></h1>
+        <div class="star-btn"><iframe src="https://ghbtns.com/github-btn.html?user=importcjj&repo=ajson&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe></div>
+        <p>Rust implementation of <a href="https://github.com/tidwall/gjson/blob/master/SYNTAX.md">GJSON Syntax</a>.
+            AJSON provides a fast and simple way to search a JSON document.</p>
+        <input type="text" id="path" class="component">
+        <div class="editor-wrapper component">
+            <div id="editor"></div>
+        </div>
+        <div class="value-wrapper component">
+            <div id="json-value"></div>
+        </div>
+        <h2>Examples</h2>
+        <pre class="example">
+name.last        &gt;&gt; "Anderson"
+age              &gt;&gt; 37
+children         &gt;&gt; ["Sara","Alex","Jack"]
+children.#       &gt;&gt; 3
+children.1       &gt;&gt; "Alex"
+child*.2         &gt;&gt; "Jack"
+c?ildren.0       &gt;&gt; "Sara"
+fav\.movie       &gt;&gt; "Deer Hunter"
+friends.#.first  &gt;&gt; ["Dale","Roger","Jane"]
+friends.1.last   &gt;&gt; "Craig"</pre>
+
+        <p>
+
+            Query an array for the first match by using #(...),
+            or find all matches with #(...)#.
+            Queries support the ==, !=, <, <=,>, >= comparison operators and
+                the simple pattern matching % operator.
+
+        </p>
+        <pre class="example">
+friends.#(last=="Murphy").first   &gt;&gt; "Dale"
+friends.#(last=="Murphy")#.first  &gt;&gt; ["Dale","Jane"]
+friends.#(age&gt;45)#.last           &gt;&gt; ["Craig","Murphy"]
+friends.#(first%"D*").last        &gt;&gt; "Murphy"
+friends.#(nets.#(=="fb"))#.first  &gt;&gt; ["Dale","Roger"]
+</pre>
+
+        <p>
+            Use the selectors syntax to join multiple paths into a new JSON document.
+        </p>
+
+        <pre class="example">
+{name.first,age,"murphys":friends.#(last="Murphy")#.first}
+[name.first,age,children.0]</pre>
+
+        <p class="tip">Powered by <a
+                href="https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm">webassembly</a></p>
+    </div>
+
+    <!-- <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="./index.js"></script>
+<script type="text/javascript" src="index.js"></script></body>
+
+</html>
