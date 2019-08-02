@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wasm-bindgen = "0.2"
-ajson = { git = "https://github.com/importcjj/ajson" }
+ajson = { git = "https://github.com/importcjj/a-json" }
 # ajson = { path = "/Users/helloworld/rustlang/ajson"}
 
 
