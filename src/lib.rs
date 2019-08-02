@@ -3,7 +3,7 @@
 
 use web_sys::console;
 use wasm_bindgen::prelude::*;
-use gjson::GJSON;
+use gjson;
 
 #[wasm_bindgen]
 extern {
@@ -22,7 +22,6 @@ pub fn get_value(json: &str, path: &str) -> Result<JsValue, JsValue> {
     // console::log_1(&"path".into());
     // console::log_1(&path.into());
     
-    let r = GJSON::from_str(json);
-    let v = r.get(path);
-    Ok(JsValue::from_str(&format!("{:?}", v)))
+    let r = gjson::get(json, path);
+    Ok(JsValue::from_str(r.to_string().as_str()))
 }

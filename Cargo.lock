@@ -66,7 +66,6 @@ dependencies = [
 [[package]]
 name = "gjson"
 version = "0.1.0"
-source = "git+https://github.com/importcjj/gjson#d05f26476a634b9784637ee49a50168ed24c06f5"
 dependencies = [
  "regex 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -123,7 +122,7 @@ dependencies = [
 name = "playground"
 version = "0.1.0"
 dependencies = [
- "gjson 0.1.0 (git+https://github.com/importcjj/gjson)",
+ "gjson 0.1.0",
  "wasm-bindgen 0.2.48 (registry+https://github.com/rust-lang/crates.io-index)",
  "web-sys 0.3.25 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -320,7 +319,6 @@ dependencies = [
 "checksum cfg-if 0.1.9 (registry+https://github.com/rust-lang/crates.io-index)" = "b486ce3ccf7ffd79fdeb678eac06a9e6c09fc88d33836340becb8fffe87c5e33"
 "checksum failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "795bd83d3abeb9220f257e597aa0080a508b27533824adf336529648f6abf7e2"
 "checksum failure_derive 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "ea1063915fd7ef4309e222a5a07cf9c319fb9c7836b1f89b85458672dbb127e1"
-"checksum gjson 0.1.0 (git+https://github.com/importcjj/gjson)" = "<none>"
 "checksum heck 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "20564e78d53d2bb135c343b3f47714a56af2061f1c928fdb541dc7b9fdd94205"
 "checksum js-sys 0.3.25 (registry+https://github.com/rust-lang/crates.io-index)" = "da3ea71161651a4cd97d999b2da139109c537b15ab33abc8ae4ead38deac8a03"
 "checksum lazy_static 1.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "bc5729f27f159ddd61f4df6228e827e86643d4d3e7c32183cb30a1c08f604a14"
