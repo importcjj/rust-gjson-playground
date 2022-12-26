@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "ace-builds": "^1.4.5",
-    "file-loader": "^4.1.0"
+    "file-loader": "^6.0.0"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "0.4.2",
